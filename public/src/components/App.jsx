@@ -8,7 +8,13 @@ export default class App extends Component {
     this.state = {
       data: sampleData
     };
+    this.handleBookClick = this.handleBookClick.bind(this);
   }
+
+  handleBookClick(keywords) {
+    console.log("clicked", keywords);
+  }
+
   render() {
     const { data } = this.state;
     return (
@@ -16,7 +22,7 @@ export default class App extends Component {
         <h1>LOTR Loading!</h1>
         <ul>
           {data.map(book => (
-            <Book bookInfo={book} />
+            <Book bookInfo={book} handleBookClick={this.handleBookClick} />
           ))}
         </ul>
       </Fragment>
