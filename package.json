@@ -1,0 +1,35 @@
+{
+  "name": "LOTR",
+  "version": "1.0.0",
+  "description": "React LOTR coding challenge.",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferdelamad/LOTR.git"
+  },
+  "keywords": [
+    "LOTR"
+  ],
+  "author": "Fernando De La Madrid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferdelamad/LOTR/issues"
+  },
+  "homepage": "https://github.com/ferdelamad/LOTR#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
