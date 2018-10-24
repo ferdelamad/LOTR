@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { sampleData } from "../sampleData";
+import Book from "./Book";
 
 export default class App extends Component {
   constructor(props) {
@@ -9,10 +10,15 @@ export default class App extends Component {
     };
   }
   render() {
-    console.log("data", this.state.data);
+    const { data } = this.state;
     return (
       <Fragment>
         <h1>LOTR Loading!</h1>
+        <ul>
+          {data.map(book => (
+            <Book bookInfo={book} />
+          ))}
+        </ul>
       </Fragment>
     );
   }
