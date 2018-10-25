@@ -1,5 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { sampleData } from '../sampleData';
+import './App.css';
 import Book from './Book';
 
 export default class App extends Component {
@@ -38,8 +39,8 @@ export default class App extends Component {
   render() {
     const { data, filter, boldedBooks } = this.state;
     return (
-      <Fragment>
-        <h1>LOTR Loading!</h1>
+      <div className="main">
+        <h1 className="title">Book Library</h1>
         <ul>
           {data.map((book, i) => (
             <Book
@@ -51,7 +52,7 @@ export default class App extends Component {
             />
           ))}
         </ul>
-      </Fragment>
+      </div>
     );
   }
 }

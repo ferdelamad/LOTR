@@ -7,7 +7,7 @@ const Book = ({
   let boldClass;
   bolded ? (boldClass = 'bold') : '';
   return (
-    <li onClick={() => handleBookClick(keywords)}>
+    <li className="book-container" onClick={() => handleBookClick(keywords)}>
       <div className={boldClass}>
         <div>
           Title:
