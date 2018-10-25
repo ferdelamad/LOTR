@@ -11,13 +11,13 @@ export default class App extends Component {
       filter: '',
       boldedBooks: [],
       clickKeys: [],
+      target: '',
     };
     this.handleBookClick = this.handleBookClick.bind(this);
   }
 
-  handleBookClick(e, clickKeys) {
-    console.log('e', e)
-    this.setState({ clickKeys });
+  handleBookClick(target, clickKeys) {
+    this.setState({ clickKeys, target });
     const { data } = this.state;
     const filter = {};
     for (let i = 0; i < clickKeys.length; i += 1) {
@@ -40,7 +40,9 @@ export default class App extends Component {
   }
 
   render() {
-    const { data, boldedBooks, clickKeys } = this.state;
+    const {
+      data, boldedBooks, clickKeys, target,
+    } = this.state;
     return (
       <div className="main">
         <h1 className="title">Book Library</h1>
@@ -48,8 +50,10 @@ export default class App extends Component {
           {data.map((book, i) => (
             <Book
               {...book}
-              bolded={boldedBooks[i]}
-              key={i}
+              boldKey={boldedBooks[i]}
+              target={target}
+              key={book.id}
+              index={i}
               handleBookClick={this.handleBookClick}
               clickKeys={clickKeys}
             />

@@ -2,26 +2,35 @@ import React from 'react';
 import './Book.css';
 
 const Book = ({
-  handleBookClick, title, author, keywords, coverUrl, bolded, clickKeys,
+  handleBookClick,
+  title,
+  author,
+  keywords,
+  coverUrl,
+  boldKey,
+  clickKeys,
+  index,
+  target,
 }) => {
-  let boldClass;
-  bolded ? (boldClass = 'keyword') : '';
+  let boldTarget;
+  boldKey ? (boldKey = 'keyword') : '';
+  target === index ? (boldTarget = 'target') : '';
   return (
-    <li className="book-container" onClick={e => handleBookClick(e, keywords)}>
-      <div>
-        <div>
+    <li className="book-container" onClick={() => handleBookClick(index, keywords)}>
+      <div className={`book-info ${boldTarget}`}>
+        <div className="header">
           Title:
-          {title}
+          <div className="body">{title}</div>
         </div>
-        <div>
+        <div className="header">
           Author:
-          {author}
+          <div className="body">{author}</div>
         </div>
-        <div>
+        <div className="header">
           Keywords:
-          <div>
+          <div className="body">
             {keywords.map(
-              key => (clickKeys.includes(key) ? <div className={boldClass}>{key}</div> : <div>{key}</div>),
+              key => (clickKeys.includes(key) ? <div className={boldKey}>{key}</div> : <div>{key}</div>),
             )}
           </div>
         </div>
