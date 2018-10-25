@@ -12,32 +12,21 @@ const Book = ({
   index,
   target,
 }) => {
-  let boldTarget;
+  const boldTarget = target === index ? 'book-info bold' : 'book-info';
   boldKey ? (boldKey = 'keyword') : '';
-  target === index ? (boldTarget = 'target') : '';
   return (
     <li className="book-container" onClick={() => handleBookClick(index, keywords)}>
-      <div className={`book-info ${boldTarget}`}>
-        <div className="header">
-          Title:
-          <div className="body">{title}</div>
-        </div>
-        <div className="header">
-          Author:
-          <div className="body">{author}</div>
-        </div>
-        <div className="header">
-          Keywords:
-          <div className="body">
-            {keywords.map(
-              key => (clickKeys.includes(key) ? <div className={boldKey}>{key}</div> : <div>{key}</div>),
-            )}
-          </div>
-        </div>
+      <div className={boldTarget}>
+        <h3>Title</h3>
+        <p>{title}</p>
+        <h3>Author</h3>
+        <p>{author}</p>
+        <h3>Keywords</h3>
+        {keywords.map(
+          key => (clickKeys.includes(key) ? <p className={boldKey}>{key}</p> : <p>{key}</p>),
+        )}
       </div>
-      <div>
-        <img className="img" src={coverUrl} alt="Book" />
-      </div>
+      <img className="img" src={coverUrl} alt="Book" />
     </li>
   );
 };
