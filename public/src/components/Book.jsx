@@ -2,13 +2,13 @@ import React from 'react';
 import './Book.css';
 
 const Book = ({
-  handleBookClick, title, author, keywords, coverUrl, bolded,
+  handleBookClick, title, author, keywords, coverUrl, bolded, clickKeys,
 }) => {
   let boldClass;
-  bolded ? (boldClass = 'bold') : '';
+  bolded ? (boldClass = 'keyword') : '';
   return (
-    <li className="book-container" onClick={() => handleBookClick(keywords)}>
-      <div className={boldClass}>
+    <li className="book-container" onClick={e => handleBookClick(e, keywords)}>
+      <div>
         <div>
           Title:
           {title}
@@ -19,9 +19,11 @@ const Book = ({
         </div>
         <div>
           Keywords:
-          {keywords.map(key => (
-            <div>{key}</div>
-          ))}
+          <div>
+            {keywords.map(
+              key => (clickKeys.includes(key) ? <div className={boldClass}>{key}</div> : <div>{key}</div>),
+            )}
+          </div>
         </div>
       </div>
       <div>

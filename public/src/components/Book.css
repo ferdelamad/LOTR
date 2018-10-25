@@ -18,3 +18,8 @@
   flex: 1;
   padding: 25px;
 }
+
+.keyword {
+  font-weight: bold;
+  background: #bada55;
+}

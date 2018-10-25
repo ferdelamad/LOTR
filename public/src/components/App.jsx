@@ -10,15 +10,18 @@ export default class App extends Component {
       data: sampleData,
       filter: '',
       boldedBooks: [],
+      clickKeys: [],
     };
     this.handleBookClick = this.handleBookClick.bind(this);
   }
 
-  handleBookClick(keywords) {
+  handleBookClick(e, clickKeys) {
+    console.log('e', e)
+    this.setState({ clickKeys });
     const { data } = this.state;
     const filter = {};
-    for (let i = 0; i < keywords.length; i += 1) {
-      filter[keywords[i]] = true;
+    for (let i = 0; i < clickKeys.length; i += 1) {
+      filter[clickKeys[i]] = true;
     }
     this.toggleTitles(filter, data);
   }
@@ -37,7 +40,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { data, filter, boldedBooks } = this.state;
+    const { data, boldedBooks, clickKeys } = this.state;
     return (
       <div className="main">
         <h1 className="title">Book Library</h1>
@@ -48,7 +51,7 @@ export default class App extends Component {
               bolded={boldedBooks[i]}
               key={i}
               handleBookClick={this.handleBookClick}
-              filter={filter}
+              clickKeys={clickKeys}
             />
           ))}
         </ul>
