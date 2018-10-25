@@ -1,5 +1,9 @@
 body {
-  background-image: linear-gradient(to bottom, rgba(0, 131, 131, 0.384), rgba(0, 110, 255, 0.781));
+  background: #fc5c7d;
+  background: -webkit-linear-gradient(to top, #fc5c7d, #6a82fb);
+  background: linear-gradient(to top, #fc5c7d, #6a82fb);
+  font-family: 'Lato', sans-serif;
+  color: #fff;
 }
 .main {
   margin: auto;
@@ -8,6 +12,5 @@ body {
 
 .title {
   text-align: center;
-  color: #bada55;
   font-weight: bold;
 }

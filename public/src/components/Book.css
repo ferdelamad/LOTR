@@ -1,3 +1,19 @@
+h3,
+p {
+  margin: 0;
+  font-weight: unset;
+}
+
+p {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+h3 {
+  padding-top: 10px;
+  color: #000;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -14,14 +30,14 @@
 }
 
 .book-container > * {
-  /* border: solid 1px red; */
   flex: 1;
   padding: 25px;
 }
 
 .keyword {
   font-weight: bold;
-  background: #bada55;
+  background: #fff200;
+  color: #000;
 }
 
 .bold {
