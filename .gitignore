@@ -12,3 +12,9 @@ public/main.js
 logs
 *.log
 *.vscode
+
+##linter
+.eslintrc.js
+.eslintrc.json
+.prettierrc
+

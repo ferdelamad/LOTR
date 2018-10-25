@@ -1,10 +1,10 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./public/src/index.jsx",
+  entry: './public/src/index.jsx',
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "./public")
+    filename: 'main.js',
+    path: path.resolve(__dirname, './public'),
   },
   module: {
     rules: [
@@ -12,19 +12,19 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           query: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
-          }
-        }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: [".js", ".jsx"]
-  }
+    extensions: ['.js', '.jsx'],
+  },
 };
