@@ -21,6 +21,7 @@ h3 {
 .img {
   width: 225px;
   height: 350px;
+  cursor: pointer;
 }
 
 .book-container {
@@ -47,4 +48,5 @@ h3 {
 .book-info {
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
